@@ -173,6 +173,29 @@ public class SimpleListExpt {
     pen.println();
   } // expt4(PrintWriter, SimpleList<String>, int)
 
+
+  static void expt5(PrintWriter pen, SimpleList<String> lst) throws Exception{
+    pen.println("Experiment 5: Remove every other element starting at the back of the list.");
+    final Counter counter = new Counter();
+    addStrings(pen, lst, new String[] {"A", "B", "C", "D", "E", "F", "G"});
+    removeBackwardExpt(pen, lst, (str) -> (counter.get() % 2) == 0);
+    pen.println();
+  }
+
+  static void expt6(PrintWriter pen, SimpleList<String> lst) throws Exception{
+    pen.println("Experiment 6: Remove backwards from an empty list.");
+    addStrings(pen, lst, new String[] {});
+    removeBackwardExpt(pen, lst, (str) -> true);
+    pen.println();
+  }
+  static void expt7(PrintWriter pen, SimpleList<String> lst) throws Exception {
+    pen.println("Experiment 7: Remove 3 and keeps 2");
+    final Counter counter = new Counter();
+    addStrings(pen, lst, new String[] {"A", "B", "C", "D", "E", "F", "G"});
+    removeForwardExpt(pen, lst, (str) -> (counter.get() % 5) <= 2);
+    pen.println();
+  } // expt2(PrintWriter, SimpleList<String>)
+
 } // class SimpleListExpt
 
 /**
